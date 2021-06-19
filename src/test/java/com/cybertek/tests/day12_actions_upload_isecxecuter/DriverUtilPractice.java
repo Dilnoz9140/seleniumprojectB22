@@ -35,6 +35,6 @@ public class DriverUtilPractice {
         //will terminate the session and assign drivel value to null
         Driver.closeDriver();
         Driver.getDriver().get("https://etsy.com");
-        Driver.closeDriver(;
+        Driver.closeDriver();
     }
 }
