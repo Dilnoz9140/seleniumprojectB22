@@ -1,6 +1,7 @@
 package com.cybertek.tests.day10_webtable_properties_practices;
 
 import com.cybertek.utilities.ConfigurationReader;
+import com.cybertek.utilities.TableUtils;
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,29 +13,13 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class Table_Tasks {
-    WebDriver driver;
-
-  @BeforeMethod
-  public void setupMethod(){
-
-      String browser = ConfigurationReader.getProperty("browser");
-      //This line return String : "chrome"
-
-      String url = ConfigurationReader.getProperty("dataTablesUrl");
-      //This line returns String: "http://practice.cybertekschool.com/tables#edit"
-
-      driver = WebDriverFactory.getDriver(browser);
-      driver.manage().window().maximize();
-      driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-      driver.get(url);
-
-      // below code is same as above
-      //driver.get(ConfigurationReader.getProperty("dataTablesUrl"))
-
-  }
 
  @Test
-public void task3_return_tims_due_amount(){
+  public void task3_return_tims_due_amount(){
+     String url = ConfigurationReader.getProperty("dataTablesUrl");
+     // below code is same as above
+     //driver.get(ConfigurationReader.getProperty("dataTablesUrl"))
+     driver.get(url);
 
  //      1.Open browser and go to: http://practice.cybertekschool.com/tables#edit
 
@@ -61,4 +46,11 @@ public void task3_return_tims_due_amount(){
 
 
   }
+
+
+  @Test
+    public void tasks4_verify_order_method(){
+      TableUtils.verifyOrder(driver,"Tim");
+  }
+
 }
