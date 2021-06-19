@@ -1,25 +1,22 @@
 package com.cybertek.tests.day10_webtable_properties_practices;
 
+import com.cybertek.tests.base.TestBase;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.TableUtils;
-import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
-public class Table_Tasks {
+public class Table_Tasks extends TestBase {
 
  @Test
   public void task3_return_tims_due_amount(){
      String url = ConfigurationReader.getProperty("dataTablesUrl");
+     driver.get(url);
      // below code is same as above
      //driver.get(ConfigurationReader.getProperty("dataTablesUrl"))
-     driver.get(url);
+
 
  //      1.Open browser and go to: http://practice.cybertekschool.com/tables#edit
 
@@ -50,7 +47,16 @@ public class Table_Tasks {
 
   @Test
     public void tasks4_verify_order_method(){
+      String url = ConfigurationReader.getProperty("dataTablesUrl");
+      driver.get(url);
       TableUtils.verifyOrder(driver,"Tim");
   }
+
+    @Test
+    public void tasks5_print_all_names_and_email(){
+        String url = ConfigurationReader.getProperty("dataTablesUrl");
+        driver.get(url);
+        TableUtils.printNamesAndEmails(driver);
+    }
 
 }
