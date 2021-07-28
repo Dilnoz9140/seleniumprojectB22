@@ -1,8 +1,9 @@
-package com.cybertek.tests.day12_actions_upload_isecxecuter;
+package com.cybertek.tests.day12_actions_upload_jsecxecuter;
 
 import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -59,4 +60,33 @@ public class ActionsPractice {
         Assert.assertTrue(user3.isDisplayed(),"User3 text is not displayed.Fail!!!");
 
     }
+
+   @Test
+    public void scrolling_test(){
+        //Go to http://practice.cybertekschool.com/hovers
+        Driver.getDriver().get("http://practice.cybertekschool.com/");
+
+        //Scroll down to "Powered By Cybertek School"
+       Actions actions = new Actions(Driver.getDriver());
+
+       //Locate "Powered By Cybertek School"
+       WebElement cybertekSchoolLink = Driver.getDriver().findElement(By.linkText("Cybertek School"));
+
+       //Scroll using actions object
+       BrowserUtils.sleep(2);
+       actions.moveToElement(cybertekSchoolLink).perform();
+
+       //Scrolling up using Keys.Page_UP button
+       BrowserUtils.sleep(2);
+       actions.sendKeys(Keys.PAGE_UP, Keys.PAGE_UP).perform();
+
+//        BrowserUtils.sleep(2);
+//        actions.sendKeys(Keys.PAGE_UP).perform();
+
+       BrowserUtils.sleep(2);
+       actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+
+
+   }
 }

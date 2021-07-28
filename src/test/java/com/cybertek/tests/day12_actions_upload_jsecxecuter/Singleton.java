@@ -1,4 +1,4 @@
-package com.cybertek.tests.day12_actions_upload_isecxecuter;
+package com.cybertek.tests.day12_actions_upload_jsecxecuter;
 
 /*
   We will create similar logic we created In Driver utility class.

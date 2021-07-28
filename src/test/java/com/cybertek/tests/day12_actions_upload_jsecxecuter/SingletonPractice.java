@@ -1,4 +1,4 @@
-package com.cybertek.tests.day12_actions_upload_isecxecuter;
+package com.cybertek.tests.day12_actions_upload_jsecxecuter;
 
 import org.testng.annotations.Test;
 

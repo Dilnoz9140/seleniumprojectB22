@@ -1,4 +1,4 @@
-package com.cybertek.tests.day12_actions_upload_isecxecuter;
+package com.cybertek.tests.day12_actions_upload_jsecxecuter;
 
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
